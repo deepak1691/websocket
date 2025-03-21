@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&display=swap");
+
+
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+
+.test-style {
+  font-family: "Poppins", sans-serif;
+}
+
+.flex-fl::-webkit-scrollbar {
+    display: none; 
+  }
+  .flex-fl {
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar in Internet Explorer 10+ */
+  }

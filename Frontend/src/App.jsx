@@ -7,6 +7,7 @@ import Logout from './componets/landing/logout';
 import Login from './componets/landing/Login';
 import Signup from './componets/landing/Signup';
 
+
 export default function App() {
 
   const router=createBrowserRouter([
@@ -25,7 +26,8 @@ export default function App() {
       {
         path:"/login",
         element:<Login/>
-      }
+      },
+   
   ]);
   return<RouterProvider router={router}/>
 }

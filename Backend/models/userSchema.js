@@ -18,6 +18,11 @@ const userSchema=new Schema({
         type:String,
         required:true
     },
+    image:
+    {
+        type:String,
+        default:"https://res.cloudinary.com/ddwbrfz4k/image/upload/v1734617918/wanderlust_dev/ngn2fzswiybxwmziwpde.jpg"
+    }
     
 },{timestamps:true}
 );

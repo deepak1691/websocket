@@ -22,7 +22,7 @@ export default function Right() {
       
       <div className=' bg-stone-200'>
       <ChatHeader/>
-      <div className='flex-fl overflow-y-auto' style={{maxHeight:"calc(92vh - 8vh)"}}>
+      <div className='flex-fl overflow-y-auto' >
       <ChatMessages/>
       </div>
     

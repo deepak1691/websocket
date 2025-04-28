@@ -13,8 +13,9 @@ export const SocketProvider=({children})=>{
 
     useEffect(()=>{
         //http://localhost:3000-------->for local link
+        // https://websocket-ljpn.onrender.com
         if(user1){
-            const socket=io("https://websocket-ljpn.onrender.com",
+            const socket=io("http://localhost:3000",
                 {
                     query:{
                         userId:user1._id

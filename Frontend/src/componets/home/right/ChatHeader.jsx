@@ -16,7 +16,8 @@ export default function ChatHeader() {
     <div className='flex justify-center bg-blue-50 h-[8vh] '>
         <div className={`avatar ${isOnline?"avatar-online":"avatar-offline"}`}>
          <div className="w-13 h-13 mt-0.5 rounded-full">
-      <img src="\user.png"/>
+      <img src={selectedConversation.image}/>
+      
         </div>
     </div>
     <div className='ps-3 pt-2'>

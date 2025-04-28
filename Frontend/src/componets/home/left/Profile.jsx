@@ -13,6 +13,7 @@ export default function ({username}) {
   const{onlineUser,socket}=useSocketContext();
   // console.log(onlineUser);
   
+  let { user1 }=useAuth();
 const isOnline=onlineUser.includes(username._id);
   
   return (
@@ -20,7 +21,7 @@ const isOnline=onlineUser.includes(username._id);
           <div className='flex mt-4 ps-3 hover:bg-gray-300 transition duration-300 ease-in-out hover:rounded hover:cursor-pointer'>
           <div className={`avatar ${isOnline?"avatar-online":"avatar-offline"}`}>
            <div className="w-12 rounded-full">
-          <img src="user.png"/>
+          <img src={username.image}/>
             </div>
              </div>
              <div className='px-4'>
@@ -28,6 +29,7 @@ const isOnline=onlineUser.includes(username._id);
              <span>@{username.username.toLowerCase()}</span>
              </div>
        </div>
+       
     </div>
   )
 }

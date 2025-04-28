@@ -30,6 +30,41 @@ export const registerUser=async(req,res)=>{
     }
 }
 
+
+export const uploadImage = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Cloudinary stores image automatically via multer-storage-cloudinary
+    if (!req.file || !req.file.path) {
+      return res.status(400).json({ message: "No image uploaded" });
+    }
+
+    // Get the Cloudinary URL from multer result
+    const imageUrl = req.file.path;
+
+    // Save to user in MongoDB
+    const updatedUser = await User.findByIdAndUpdate(
+      id,
+      { image: imageUrl },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json({
+      message: "Image uploaded and saved successfully",
+      imageUrl,
+      user: updatedUser,
+    });
+  } catch (error) {
+    console.error("Upload Error:", error);
+    res.status(500).json({ message: "Image upload failed", error });
+  }
+};
+
 //login route
 
 export const loginUser=async(req,res)=>{

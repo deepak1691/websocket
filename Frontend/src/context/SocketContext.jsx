@@ -15,7 +15,7 @@ export const SocketProvider=({children})=>{
         //http://localhost:3000-------->for local link
         // https://websocket-ljpn.onrender.com
         if(user1){
-            const socket=io("http://localhost:3000",
+            const socket=io("https://websocket-ljpn.onrender.com",
                 {
                     query:{
                         userId:user1._id
